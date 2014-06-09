@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9B0C0B8C1945B6CD00CA8FD5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0C0B8A1945B6CD00CA8FD5 /* DetailViewController.swift */; };
+		9B0C0B8D1945B6CD00CA8FD5 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B0C0B8B1945B6CD00CA8FD5 /* DetailViewController.xib */; };
+		9B294EBD1945A40E0068867D /* beijing.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B294EAF1945A40E0068867D /* beijing.jpg */; };
+		9B294EBE1945A40E0068867D /* Brisbane.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B294EB01945A40E0068867D /* Brisbane.jpg */; };
+		9B294EBF1945A40E0068867D /* CityofLosAngeles.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B294EB11945A40E0068867D /* CityofLosAngeles.jpg */; };
+		9B294EC01945A40E0068867D /* CityofVancouver.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B294EB21945A40E0068867D /* CityofVancouver.jpg */; };
+		9B294EC11945A40E0068867D /* guangzhou.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B294EB31945A40E0068867D /* guangzhou.jpg */; };
+		9B294EC21945A40E0068867D /* Melbourne.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B294EB41945A40E0068867D /* Melbourne.jpg */; };
+		9B294EC31945A40E0068867D /* Montreal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B294EB51945A40E0068867D /* Montreal.jpg */; };
+		9B294EC41945A40E0068867D /* NewYork.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B294EB61945A40E0068867D /* NewYork.jpg */; };
+		9B294EC51945A40E0068867D /* SanFrancisco.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B294EB71945A40E0068867D /* SanFrancisco.jpg */; };
+		9B294EC61945A40E0068867D /* shanghai.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B294EB81945A40E0068867D /* shanghai.jpg */; };
+		9B294EC71945A40E0068867D /* shenzhen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B294EB91945A40E0068867D /* shenzhen.jpg */; };
+		9B294EC81945A40E0068867D /* Sydney.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B294EBA1945A40E0068867D /* Sydney.png */; };
+		9B294EC91945A40E0068867D /* Toronto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B294EBB1945A40E0068867D /* Toronto.jpg */; };
+		9B294ECA1945A40E0068867D /* Washington.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9B294EBC1945A40E0068867D /* Washington.jpeg */; };
+		9BC1762F1945935000F2DBEB /* cityPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BC1762E1945935000F2DBEB /* cityPlist.plist */; };
+		D966CF371944207900951F32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D966CF361944207900951F32 /* AppDelegate.swift */; };
+		D966CF391944207900951F32 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D966CF381944207900951F32 /* Images.xcassets */; };
+		D966CF451944207A00951F32 /* STSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D966CF441944207A00951F32 /* STSwiftTests.swift */; };
+		D966CF551944352D00951F32 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D966CF531944352D00951F32 /* RootViewController.swift */; };
+		D966CF561944352D00951F32 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D966CF541944352D00951F32 /* RootViewController.xib */; };
+		D966CF5919443B5800951F32 /* STTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D966CF5719443B5800951F32 /* STTableViewCell.swift */; };
+		D966CF5A19443B5800951F32 /* STTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D966CF5819443B5800951F32 /* STTableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D966CF3F1944207A00951F32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D966CF291944207900951F32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D966CF301944207900951F32;
+			remoteInfo = STSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9B0C0B8A1945B6CD00CA8FD5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9B0C0B8B1945B6CD00CA8FD5 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		9B294EAF1945A40E0068867D /* beijing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beijing.jpg; sourceTree = "<group>"; };
+		9B294EB01945A40E0068867D /* Brisbane.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Brisbane.jpg; sourceTree = "<group>"; };
+		9B294EB11945A40E0068867D /* CityofLosAngeles.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CityofLosAngeles.jpg; sourceTree = "<group>"; };
+		9B294EB21945A40E0068867D /* CityofVancouver.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CityofVancouver.jpg; sourceTree = "<group>"; };
+		9B294EB31945A40E0068867D /* guangzhou.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guangzhou.jpg; sourceTree = "<group>"; };
+		9B294EB41945A40E0068867D /* Melbourne.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Melbourne.jpg; sourceTree = "<group>"; };
+		9B294EB51945A40E0068867D /* Montreal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Montreal.jpg; sourceTree = "<group>"; };
+		9B294EB61945A40E0068867D /* NewYork.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NewYork.jpg; sourceTree = "<group>"; };
+		9B294EB71945A40E0068867D /* SanFrancisco.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SanFrancisco.jpg; sourceTree = "<group>"; };
+		9B294EB81945A40E0068867D /* shanghai.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shanghai.jpg; sourceTree = "<group>"; };
+		9B294EB91945A40E0068867D /* shenzhen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shenzhen.jpg; sourceTree = "<group>"; };
+		9B294EBA1945A40E0068867D /* Sydney.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sydney.png; sourceTree = "<group>"; };
+		9B294EBB1945A40E0068867D /* Toronto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Toronto.jpg; sourceTree = "<group>"; };
+		9B294EBC1945A40E0068867D /* Washington.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Washington.jpeg; sourceTree = "<group>"; };
+		9BB9414119455B9700033FC5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = Classes/MyPlayground.playground; sourceTree = "<group>"; };
+		9BC1762E1945935000F2DBEB /* cityPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityPlist.plist; sourceTree = "<group>"; };
+		D966CF311944207900951F32 /* STSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D966CF351944207900951F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D966CF361944207900951F32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D966CF381944207900951F32 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D966CF3E1944207A00951F32 /* STSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D966CF431944207A00951F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D966CF441944207A00951F32 /* STSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STSwiftTests.swift; sourceTree = "<group>"; };
+		D966CF531944352D00951F32 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		D966CF541944352D00951F32 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		D966CF5719443B5800951F32 /* STTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STTableViewCell.swift; sourceTree = "<group>"; };
+		D966CF5819443B5800951F32 /* STTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = STTableViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D966CF2E1944207900951F32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D966CF3B1944207A00951F32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9B294EAD1945A3E20068867D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9B294EAE1945A40E0068867D /* images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9B294EAE1945A40E0068867D /* images */ = {
+			isa = PBXGroup;
+			children = (
+				9B294EAF1945A40E0068867D /* beijing.jpg */,
+				9B294EB01945A40E0068867D /* Brisbane.jpg */,
+				9B294EB11945A40E0068867D /* CityofLosAngeles.jpg */,
+				9B294EB21945A40E0068867D /* CityofVancouver.jpg */,
+				9B294EB31945A40E0068867D /* guangzhou.jpg */,
+				9B294EB41945A40E0068867D /* Melbourne.jpg */,
+				9B294EB51945A40E0068867D /* Montreal.jpg */,
+				9B294EB61945A40E0068867D /* NewYork.jpg */,
+				9B294EB71945A40E0068867D /* SanFrancisco.jpg */,
+				9B294EB81945A40E0068867D /* shanghai.jpg */,
+				9B294EB91945A40E0068867D /* shenzhen.jpg */,
+				9B294EBA1945A40E0068867D /* Sydney.png */,
+				9B294EBB1945A40E0068867D /* Toronto.jpg */,
+				9B294EBC1945A40E0068867D /* Washington.jpeg */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		D966CF281944207900951F32 = {
+			isa = PBXGroup;
+			children = (
+				D966CF331944207900951F32 /* STSwift */,
+				D966CF411944207A00951F32 /* STSwiftTests */,
+				D966CF321944207900951F32 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D966CF321944207900951F32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D966CF311944207900951F32 /* STSwift.app */,
+				D966CF3E1944207A00951F32 /* STSwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D966CF331944207900951F32 /* STSwift */ = {
+			isa = PBXGroup;
+			children = (
+				9B294EAD1945A3E20068867D /* Resources */,
+				9BB9414119455B9700033FC5 /* MyPlayground.playground */,
+				D966CF4E1944209600951F32 /* Classes */,
+				D966CF361944207900951F32 /* AppDelegate.swift */,
+				D966CF381944207900951F32 /* Images.xcassets */,
+				D966CF341944207900951F32 /* Supporting Files */,
+			);
+			path = STSwift;
+			sourceTree = "<group>";
+		};
+		D966CF341944207900951F32 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D966CF351944207900951F32 /* Info.plist */,
+				9BC1762E1945935000F2DBEB /* cityPlist.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D966CF411944207A00951F32 /* STSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				D966CF441944207A00951F32 /* STSwiftTests.swift */,
+				D966CF421944207A00951F32 /* Supporting Files */,
+			);
+			path = STSwiftTests;
+			sourceTree = "<group>";
+		};
+		D966CF421944207A00951F32 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D966CF431944207A00951F32 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D966CF4E1944209600951F32 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D966CF531944352D00951F32 /* RootViewController.swift */,
+				D966CF541944352D00951F32 /* RootViewController.xib */,
+				D966CF5719443B5800951F32 /* STTableViewCell.swift */,
+				D966CF5819443B5800951F32 /* STTableViewCell.xib */,
+				9B0C0B8A1945B6CD00CA8FD5 /* DetailViewController.swift */,
+				9B0C0B8B1945B6CD00CA8FD5 /* DetailViewController.xib */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D966CF301944207900951F32 /* STSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D966CF481944207A00951F32 /* Build configuration list for PBXNativeTarget "STSwift" */;
+			buildPhases = (
+				D966CF2D1944207900951F32 /* Sources */,
+				D966CF2E1944207900951F32 /* Frameworks */,
+				D966CF2F1944207900951F32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = STSwift;
+			productName = STSwift;
+			productReference = D966CF311944207900951F32 /* STSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D966CF3D1944207A00951F32 /* STSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D966CF4B1944207A00951F32 /* Build configuration list for PBXNativeTarget "STSwiftTests" */;
+			buildPhases = (
+				D966CF3A1944207A00951F32 /* Sources */,
+				D966CF3B1944207A00951F32 /* Frameworks */,
+				D966CF3C1944207A00951F32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D966CF401944207A00951F32 /* PBXTargetDependency */,
+			);
+			name = STSwiftTests;
+			productName = STSwiftTests;
+			productReference = D966CF3E1944207A00951F32 /* STSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D966CF291944207900951F32 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = SiTE;
+				TargetAttributes = {
+					D966CF301944207900951F32 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					D966CF3D1944207A00951F32 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = D966CF301944207900951F32;
+					};
+				};
+			};
+			buildConfigurationList = D966CF2C1944207900951F32 /* Build configuration list for PBXProject "STSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D966CF281944207900951F32;
+			productRefGroup = D966CF321944207900951F32 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D966CF301944207900951F32 /* STSwift */,
+				D966CF3D1944207A00951F32 /* STSwiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D966CF2F1944207900951F32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B0C0B8D1945B6CD00CA8FD5 /* DetailViewController.xib in Resources */,
+				9B294EC61945A40E0068867D /* shanghai.jpg in Resources */,
+				D966CF561944352D00951F32 /* RootViewController.xib in Resources */,
+				9B294EC31945A40E0068867D /* Montreal.jpg in Resources */,
+				9B294EC71945A40E0068867D /* shenzhen.jpg in Resources */,
+				9B294EC21945A40E0068867D /* Melbourne.jpg in Resources */,
+				9B294EC11945A40E0068867D /* guangzhou.jpg in Resources */,
+				9B294EC01945A40E0068867D /* CityofVancouver.jpg in Resources */,
+				D966CF391944207900951F32 /* Images.xcassets in Resources */,
+				9B294EBD1945A40E0068867D /* beijing.jpg in Resources */,
+				9B294ECA1945A40E0068867D /* Washington.jpeg in Resources */,
+				9B294EC81945A40E0068867D /* Sydney.png in Resources */,
+				9B294EBF1945A40E0068867D /* CityofLosAngeles.jpg in Resources */,
+				9B294EC91945A40E0068867D /* Toronto.jpg in Resources */,
+				9B294EBE1945A40E0068867D /* Brisbane.jpg in Resources */,
+				9B294EC41945A40E0068867D /* NewYork.jpg in Resources */,
+				9BC1762F1945935000F2DBEB /* cityPlist.plist in Resources */,
+				D966CF5A19443B5800951F32 /* STTableViewCell.xib in Resources */,
+				9B294EC51945A40E0068867D /* SanFrancisco.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D966CF3C1944207A00951F32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D966CF2D1944207900951F32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D966CF551944352D00951F32 /* RootViewController.swift in Sources */,
+				D966CF371944207900951F32 /* AppDelegate.swift in Sources */,
+				D966CF5919443B5800951F32 /* STTableViewCell.swift in Sources */,
+				9B0C0B8C1945B6CD00CA8FD5 /* DetailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D966CF3A1944207A00951F32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D966CF451944207A00951F32 /* STSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D966CF401944207A00951F32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D966CF301944207900951F32 /* STSwift */;
+			targetProxy = D966CF3F1944207A00951F32 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D966CF461944207A00951F32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D966CF471944207A00951F32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D966CF491944207A00951F32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = STSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D966CF4A1944207A00951F32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = STSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D966CF4C1944207A00951F32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/STSwift.app/STSwift";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = STSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		D966CF4D1944207A00951F32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/STSwift.app/STSwift";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = STSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D966CF2C1944207900951F32 /* Build configuration list for PBXProject "STSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D966CF461944207A00951F32 /* Debug */,
+				D966CF471944207A00951F32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D966CF481944207A00951F32 /* Build configuration list for PBXNativeTarget "STSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D966CF491944207A00951F32 /* Debug */,
+				D966CF4A1944207A00951F32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D966CF4B1944207A00951F32 /* Build configuration list for PBXNativeTarget "STSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D966CF4C1944207A00951F32 /* Debug */,
+				D966CF4D1944207A00951F32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D966CF291944207900951F32 /* Project object */;
+}
