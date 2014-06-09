@@ -30,20 +30,13 @@ class DetailViewController: UIViewController ,UIWebViewDelegate {
         if self.cityInfo {
             self.title = self.cityInfo!["cityName"] as String
         }
-        /**
-        
-        NSURL *url =[NSURL URLWithString:urlString];
-        NSLog(urlString);
-        NSURLRequest *request =[NSURLRequest requestWithURL:url];
-        [webView loadRequest:request];
-        
-        */
         
         let url = NSURL.URLWithString(self.cityInfo!["detailUrl"] as String)
         
         let request = NSURLRequest(URL:url)
+
+        self.detailWeb!.loadRequest(request)
         
-//        self.detailWeb = UIWebView(request)
     }
 
     override func didReceiveMemoryWarning() {
