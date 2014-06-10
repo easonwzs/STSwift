@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RootViewController" customModule="STSwift" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="Ea9-Ya-6Nu" id="eOx-cM-nR9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
