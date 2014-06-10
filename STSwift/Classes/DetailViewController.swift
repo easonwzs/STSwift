@@ -26,7 +26,7 @@ class DetailViewController: UIViewController ,UIWebViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if self.cityInfo {
             self.title = self.cityInfo!["cityName"] as String
         }

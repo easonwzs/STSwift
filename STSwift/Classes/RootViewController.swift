@@ -105,6 +105,8 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         cell!.cityIntroduction = cityInfo["introduction"] as String
         cell!.cityImage = UIImage_imageNamed(cityInfo["imgName"] as String)
         
+        cell!.setNeedsLayout()
+        
         return cell
     }
 

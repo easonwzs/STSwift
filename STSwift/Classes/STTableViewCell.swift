@@ -42,6 +42,18 @@ class STTableViewCell: UITableViewCell {
         self.cityImageView!.image = newValue
     }
     }
+    
+    
+    var delegate : STTableViewCellDelegate{
+    get{
+        return self.delegate
+    }
+    set{
+        self.delegate = newValue
+    }
+    }
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -51,12 +63,24 @@ class STTableViewCell: UITableViewCell {
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
     
+    override func drawRect(rect: CGRect){
+        var swipe = UISwipeGestureRecognizer(target: self, action:Selector("swipeGestureRecognizer") )
+        swipe.direction = UISwipeGestureRecognizerDirection.Left
+        self.addGestureRecognizer(swipe)
+    }
     
     
+    func swipeGestureRecognizer(recognizer:UIGestureRecognizer){
+        println("swipe")
+    }
     
+}
+
+protocol STTableViewCellDelegate{
+
+    func deleteCurrentCell()
     
 }
