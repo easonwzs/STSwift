@@ -5,15 +5,29 @@
 //  Created by EasonWang on 14-6-8.
 //  Copyright (c) 2014年 SiTE. All rights reserved.
 //
-
+import Foundation
 import UIKit
+
+@objc protocol STTableViewCellDelegate{
+    
+    @optional func deleteCurrentCell(indexPath:NSIndexPath!)
+
+}
+
 
 class STTableViewCell: UITableViewCell {
     
+    var indexPath : NSIndexPath?
+    
+    var delegate : STTableViewCellDelegate?
+    
+    var oldFrame : CGRect?
+    
+    @IBOutlet var cusContentView : UIView?
     @IBOutlet var cityTitle : UILabel?
     @IBOutlet var citySubtitle : UILabel?
     @IBOutlet var cityImageView : UIImageView?
-    /** 城市名称 */
+    /** cityName */
     var cityName : String{
     get{
         return self.cityTitle!.text
@@ -23,7 +37,7 @@ class STTableViewCell: UITableViewCell {
     }
     }
     
-    /** 城市简介 */
+    /** cityIntroduction */
     var cityIntroduction : String {
     get{
         return self.citySubtitle!.text
@@ -33,23 +47,13 @@ class STTableViewCell: UITableViewCell {
     }
     }
     
-    /** 城市图片 */
+    /** cityImage */
     var cityImage : UIImage{
     get{
         return self.cityImageView!.image
     }
     set{
         self.cityImageView!.image = newValue
-    }
-    }
-    
-    
-    var delegate : STTableViewCellDelegate{
-    get{
-        return self.delegate
-    }
-    set{
-        self.delegate = newValue
     }
     }
     
@@ -64,23 +68,53 @@ class STTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
-    
-    
-    override func drawRect(rect: CGRect){
-        var swipe = UISwipeGestureRecognizer(target: self, action:Selector("swipeGestureRecognizer") )
-        swipe.direction = UISwipeGestureRecognizerDirection.Left
-        self.addGestureRecognizer(swipe)
+
+    func refreshCell(){
+        oldFrame = self.cusContentView!.frame
+        
+        var swipeL = UISwipeGestureRecognizer(target: self, action:"swipeLeftGestureRecognizer:")
+        swipeL.direction = UISwipeGestureRecognizerDirection.Left
+        self.addGestureRecognizer(swipeL)
+        
+        var swipeR = UISwipeGestureRecognizer(target: self,action:"swipeRightGestureRecognizer:")
+        swipeR.direction = UISwipeGestureRecognizerDirection.Right
+        self.cusContentView!.addGestureRecognizer(swipeR)
+        
+        // add delete button
+        let delBtn = UIButton.buttonWithType(UIButtonType.Custom) as? UIButton
+        delBtn!.frame = CGRectMake(320, 0, 56, oldFrame!.size.height)
+        delBtn!.backgroundColor = UIColor.redColor()
+        delBtn!.font = UIFont.systemFontOfSize(14)
+        delBtn?.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        delBtn?.setTitle("Trash", forState: UIControlState.Normal)
+        delBtn?.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.cusContentView!.addSubview(delBtn)
+        self.cusContentView!.frame = CGRectMake(0,0,376,56)
     }
     
+    // swipe left
+    func swipeLeftGestureRecognizer(recognizer:UIGestureRecognizer){
+       
+        UIView.animateWithDuration(0.25, animations: {
+            self.cusContentView!.frame = CGRectMake(-56,self.oldFrame!.origin.y,self.oldFrame!.width,self.oldFrame!.size.height)
+            }, completion:{
+                (finished :Bool) in
+            })
+    }
     
-    func swipeGestureRecognizer(recognizer:UIGestureRecognizer){
-        println("swipe")
+    // swipe right
+    func swipeRightGestureRecognizer(recognizer:UIGestureRecognizer){
+        
+        UIView.animateWithDuration(0.25, animations: {
+             self.cusContentView!.frame = self.oldFrame!
+            }, completion:{
+                (finished :Bool) in})
+    }
+    
+    //
+    func buttonAction(button:UIButton!){
+        self.delegate!.deleteCurrentCell?(indexPath!)
     }
     
 }
 
-protocol STTableViewCellDelegate{
-
-    func deleteCurrentCell()
-    
-}

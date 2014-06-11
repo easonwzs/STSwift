@@ -6,18 +6,23 @@
 //  Copyright (c) 2014年 SiTE. All rights reserved.
 //
 
+struct Once {
+    static let identifier = "STCell"
+    static var isRegister : Bool = false
+}
+
 
 import Foundation
 import UIKit
 
 
-class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource {
+class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource,STTableViewCellDelegate {
     
     /** tableView */
     @IBOutlet var tableView : UITableView?
     
     /** items */
-    var items : NSArray?
+    var items : NSMutableArray?
     
     
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -39,11 +44,11 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
     }
     
     // load data
-    func loadData(){        
+    func loadData(){
         
         let path : String = NSBundle.mainBundle().pathForResource("cityPlist", ofType:"plist")
         
-        self.items = NSArray(contentsOfFile:path)
+        self.items = NSMutableArray(contentsOfFile:path)
         
     }
     
@@ -73,7 +78,7 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         return dic["city"]!.count
     }
     
-
+    
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
     {
         let section = indexPath.section
@@ -83,35 +88,25 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         let cities = cityDic["city"] as NSArray
         let cityInfo = cities[row] as NSDictionary
         
-        // 此处定义struct是因为静态属性只可以在类型声明
-        struct Once {
-            static let identifier = "STCell"
-            static var isRegister : Bool = false
-        }
-        
         if !Once.isRegister {
             let nib = UINib(nibName:"STTableViewCell",bundle:nil)
             self.tableView!.registerNib(nib,forCellReuseIdentifier:Once.identifier)
             Once.isRegister = true
         }
-        
-        // 定义cell
+
         var cell : STTableViewCell?
-        // 获取cell
         cell = self.tableView!.dequeueReusableCellWithIdentifier(Once.identifier) as STTableViewCell!
-        
-        // 设置cell上属性
+        cell!.indexPath = indexPath
         cell!.cityName = cityInfo["cityName"] as String
         cell!.cityIntroduction = cityInfo["introduction"] as String
         cell!.cityImage = UIImage_imageNamed(cityInfo["imgName"] as String)
+        cell!.delegate = self
         
-        cell!.setNeedsLayout()
-        
+        cell!.refreshCell()
         return cell
     }
 
 
-    
     // UITableViewDelegate Methods
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!)
     {
@@ -130,6 +125,27 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         
         self.navigationController.pushViewController(detailViewController, animated:true)
     }
-
+    
+    // STTableViewDelegate
+    func deleteCurrentCell(indexPath:NSIndexPath!){
+        
+        let cityDic = self.items![indexPath.section] as NSDictionary
+        
+        cityDic["city"]!.removeObjectAtIndex(indexPath.row)
+        
+        var indexPaths = [indexPath]
+        
+        UIView.animateWithDuration(0.25, animations: {
+            self.tableView!.deleteRowsAtIndexPaths(indexPaths, withRowAnimation :UITableViewRowAnimation.Fade)
+            }, completion:{
+                (finished :Bool) in
+                if finished {
+                    self.tableView!.reloadData()
+                }
+            })
+        
+        
+        
+    }
     
 }
