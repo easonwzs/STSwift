@@ -106,10 +106,9 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         return cell
     }
 
-
-    // UITableViewDelegate Methods
-    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!)
-    {
+    
+    // STTableViewDelegate
+    func didSelectRowAtIndexPath(indexPath:NSIndexPath!){
         self.tableView!.deselectRowAtIndexPath(indexPath, animated: true)
         
         let section = indexPath!.section
@@ -126,7 +125,7 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         self.navigationController.pushViewController(detailViewController, animated:true)
     }
     
-    // STTableViewDelegate
+   
     func deleteCurrentCell(indexPath:NSIndexPath!){
         
         let cityDic = self.items![indexPath.section] as NSDictionary

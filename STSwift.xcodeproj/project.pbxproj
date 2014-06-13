@@ -23,14 +23,14 @@
 		9B294EC81945A40E0068867D /* Sydney.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B294EBA1945A40E0068867D /* Sydney.png */; };
 		9B294EC91945A40E0068867D /* Toronto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B294EBB1945A40E0068867D /* Toronto.jpg */; };
 		9B294ECA1945A40E0068867D /* Washington.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9B294EBC1945A40E0068867D /* Washington.jpeg */; };
+		9B7D9BBA194A8E6D00A982DB /* STTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7D9BB8194A8E6D00A982DB /* STTableViewCell.swift */; };
+		9B7D9BBB194A8E6D00A982DB /* STTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B7D9BB9194A8E6D00A982DB /* STTableViewCell.xib */; };
 		9BC1762F1945935000F2DBEB /* cityPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BC1762E1945935000F2DBEB /* cityPlist.plist */; };
 		D966CF371944207900951F32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D966CF361944207900951F32 /* AppDelegate.swift */; };
 		D966CF391944207900951F32 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D966CF381944207900951F32 /* Images.xcassets */; };
 		D966CF451944207A00951F32 /* STSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D966CF441944207A00951F32 /* STSwiftTests.swift */; };
 		D966CF551944352D00951F32 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D966CF531944352D00951F32 /* RootViewController.swift */; };
 		D966CF561944352D00951F32 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D966CF541944352D00951F32 /* RootViewController.xib */; };
-		D966CF5919443B5800951F32 /* STTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D966CF5719443B5800951F32 /* STTableViewCell.swift */; };
-		D966CF5A19443B5800951F32 /* STTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D966CF5819443B5800951F32 /* STTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +60,8 @@
 		9B294EBA1945A40E0068867D /* Sydney.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sydney.png; sourceTree = "<group>"; };
 		9B294EBB1945A40E0068867D /* Toronto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Toronto.jpg; sourceTree = "<group>"; };
 		9B294EBC1945A40E0068867D /* Washington.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Washington.jpeg; sourceTree = "<group>"; };
+		9B7D9BB8194A8E6D00A982DB /* STTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STTableViewCell.swift; sourceTree = "<group>"; };
+		9B7D9BB9194A8E6D00A982DB /* STTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = STTableViewCell.xib; sourceTree = "<group>"; };
 		9BB9414119455B9700033FC5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = Classes/MyPlayground.playground; sourceTree = "<group>"; };
 		9BC1762E1945935000F2DBEB /* cityPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityPlist.plist; sourceTree = "<group>"; };
 		D966CF311944207900951F32 /* STSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,8 +73,6 @@
 		D966CF441944207A00951F32 /* STSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STSwiftTests.swift; sourceTree = "<group>"; };
 		D966CF531944352D00951F32 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		D966CF541944352D00951F32 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
-		D966CF5719443B5800951F32 /* STTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STTableViewCell.swift; sourceTree = "<group>"; };
-		D966CF5819443B5800951F32 /* STTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = STTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +120,15 @@
 				9B294EBC1945A40E0068867D /* Washington.jpeg */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		9B7D9BB7194A8E4600A982DB /* STTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				9B7D9BB8194A8E6D00A982DB /* STTableViewCell.swift */,
+				9B7D9BB9194A8E6D00A982DB /* STTableViewCell.xib */,
+			);
+			path = STTableViewCell;
 			sourceTree = "<group>";
 		};
 		D966CF281944207900951F32 = {
@@ -182,10 +191,9 @@
 		D966CF4E1944209600951F32 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9B7D9BB7194A8E4600A982DB /* STTableViewCell */,
 				D966CF531944352D00951F32 /* RootViewController.swift */,
 				D966CF541944352D00951F32 /* RootViewController.xib */,
-				D966CF5719443B5800951F32 /* STTableViewCell.swift */,
-				D966CF5819443B5800951F32 /* STTableViewCell.xib */,
 				9B0C0B8A1945B6CD00CA8FD5 /* DetailViewController.swift */,
 				9B0C0B8B1945B6CD00CA8FD5 /* DetailViewController.xib */,
 			);
@@ -273,6 +281,7 @@
 			files = (
 				9B0C0B8D1945B6CD00CA8FD5 /* DetailViewController.xib in Resources */,
 				9B294EC61945A40E0068867D /* shanghai.jpg in Resources */,
+				9B7D9BBB194A8E6D00A982DB /* STTableViewCell.xib in Resources */,
 				D966CF561944352D00951F32 /* RootViewController.xib in Resources */,
 				9B294EC31945A40E0068867D /* Montreal.jpg in Resources */,
 				9B294EC71945A40E0068867D /* shenzhen.jpg in Resources */,
@@ -288,7 +297,6 @@
 				9B294EBE1945A40E0068867D /* Brisbane.jpg in Resources */,
 				9B294EC41945A40E0068867D /* NewYork.jpg in Resources */,
 				9BC1762F1945935000F2DBEB /* cityPlist.plist in Resources */,
-				D966CF5A19443B5800951F32 /* STTableViewCell.xib in Resources */,
 				9B294EC51945A40E0068867D /* SanFrancisco.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,7 +317,7 @@
 			files = (
 				D966CF551944352D00951F32 /* RootViewController.swift in Sources */,
 				D966CF371944207900951F32 /* AppDelegate.swift in Sources */,
-				D966CF5919443B5800951F32 /* STTableViewCell.swift in Sources */,
+				9B7D9BBA194A8E6D00A982DB /* STTableViewCell.swift in Sources */,
 				9B0C0B8C1945B6CD00CA8FD5 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

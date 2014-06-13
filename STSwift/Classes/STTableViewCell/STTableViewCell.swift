@@ -3,7 +3,7 @@
 //  STSwift
 //
 //  Created by EasonWang on 14-6-8.
-//  Copyright (c) 2014年 SiTE. All rights reserved.
+//  Copyright (c) 2014 SiTE. All rights reserved.
 //
 import Foundation
 import UIKit
@@ -11,7 +11,9 @@ import UIKit
 @objc protocol STTableViewCellDelegate{
     
     @optional func deleteCurrentCell(indexPath:NSIndexPath!)
-
+    
+    @optional func didSelectRowAtIndexPath(indexPath:NSIndexPath!)
+    
 }
 
 
@@ -76,6 +78,10 @@ class STTableViewCell: UITableViewCell {
         swipeL.direction = UISwipeGestureRecognizerDirection.Left
         self.addGestureRecognizer(swipeL)
         
+        var tap = UITapGestureRecognizer(target: self, action:"tapGestureRecognizer:")
+        self.addGestureRecognizer(tap)
+        
+        
         var swipeR = UISwipeGestureRecognizer(target: self,action:"swipeRightGestureRecognizer:")
         swipeR.direction = UISwipeGestureRecognizerDirection.Right
         self.cusContentView!.addGestureRecognizer(swipeR)
@@ -109,6 +115,10 @@ class STTableViewCell: UITableViewCell {
              self.cusContentView!.frame = self.oldFrame!
             }, completion:{
                 (finished :Bool) in})
+    }
+    
+    func tapGestureRecognizer(recognizer:UIGestureRecognizer){
+        self.delegate!.didSelectRowAtIndexPath?(indexPath!)
     }
     
     //
