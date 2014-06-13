@@ -14,10 +14,13 @@ import UIKit
     
     @optional func didSelectRowAtIndexPath(indexPath:NSIndexPath!)
     
+    @optional func moreCitiesPhotos(indexPath:NSIndexPath!,showState:Bool)
 }
 
 
 class STTableViewCell: UITableViewCell {
+    
+    @IBOutlet var btn : UIButton?
     
     var indexPath : NSIndexPath?
     
@@ -51,27 +54,22 @@ class STTableViewCell: UITableViewCell {
     
     /** cityImage */
     var cityImage : UIImage{
+    
     get{
         return self.cityImageView!.image
     }
     set{
         self.cityImageView!.image = newValue
     }
+    
     }
     
     
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-    
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
-
-    func refreshCell(){
+        
         oldFrame = self.cusContentView!.frame
         
         var swipeL = UISwipeGestureRecognizer(target: self, action:"swipeLeftGestureRecognizer:")
@@ -98,9 +96,14 @@ class STTableViewCell: UITableViewCell {
         self.cusContentView!.frame = CGRectMake(0,0,376,56)
     }
     
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+    }
+    
     // swipe left
     func swipeLeftGestureRecognizer(recognizer:UIGestureRecognizer){
-       
+        
         UIView.animateWithDuration(0.25, animations: {
             self.cusContentView!.frame = CGRectMake(-56,self.oldFrame!.origin.y,self.oldFrame!.width,self.oldFrame!.size.height)
             }, completion:{
@@ -111,10 +114,20 @@ class STTableViewCell: UITableViewCell {
     // swipe right
     func swipeRightGestureRecognizer(recognizer:UIGestureRecognizer){
         
+        func testFunc(fin : Bool){
+            println("closures finished!")
+        }
+        
         UIView.animateWithDuration(0.25, animations: {
-             self.cusContentView!.frame = self.oldFrame!
-            }, completion:{
-                (finished :Bool) in})
+            self.cusContentView!.frame = self.oldFrame!
+            }, completion:testFunc)
+        
+        /*
+        UIView animateWi....completion(bool finished){
+        
+        }
+        
+        */
     }
     
     func tapGestureRecognizer(recognizer:UIGestureRecognizer){
@@ -125,6 +138,15 @@ class STTableViewCell: UITableViewCell {
     func buttonAction(button:UIButton!){
         self.delegate!.deleteCurrentCell?(indexPath!)
     }
+    
+    
+    
+    @IBAction func openMorePhotos(btn : UIButton!){
+        
+        self.delegate!.moreCitiesPhotos?(indexPath!,showState: !btn.selected)
+        
+    }
+    
     
 }
 

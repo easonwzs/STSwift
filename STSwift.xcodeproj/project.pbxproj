@@ -25,6 +25,9 @@
 		9B294ECA1945A40E0068867D /* Washington.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9B294EBC1945A40E0068867D /* Washington.jpeg */; };
 		9B7D9BBA194A8E6D00A982DB /* STTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7D9BB8194A8E6D00A982DB /* STTableViewCell.swift */; };
 		9B7D9BBB194A8E6D00A982DB /* STTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B7D9BB9194A8E6D00A982DB /* STTableViewCell.xib */; };
+		9B7D9BC1194A94FE00A982DB /* STScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7D9BC0194A94FE00A982DB /* STScrollView.m */; };
+		9B7D9BCA194A9B0A00A982DB /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B7D9BC8194A9B0A00A982DB /* up.png */; };
+		9B7D9BCB194A9B0A00A982DB /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B7D9BC9194A9B0A00A982DB /* down.png */; };
 		9BC1762F1945935000F2DBEB /* cityPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BC1762E1945935000F2DBEB /* cityPlist.plist */; };
 		D966CF371944207900951F32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D966CF361944207900951F32 /* AppDelegate.swift */; };
 		D966CF391944207900951F32 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D966CF381944207900951F32 /* Images.xcassets */; };
@@ -62,6 +65,11 @@
 		9B294EBC1945A40E0068867D /* Washington.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Washington.jpeg; sourceTree = "<group>"; };
 		9B7D9BB8194A8E6D00A982DB /* STTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STTableViewCell.swift; sourceTree = "<group>"; };
 		9B7D9BB9194A8E6D00A982DB /* STTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = STTableViewCell.xib; sourceTree = "<group>"; };
+		9B7D9BBE194A94FD00A982DB /* STSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "STSwift-Bridging-Header.h"; path = "STSwift/Classes/STScrollView/STSwift-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		9B7D9BBF194A94FE00A982DB /* STScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STScrollView.h; sourceTree = "<group>"; };
+		9B7D9BC0194A94FE00A982DB /* STScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STScrollView.m; sourceTree = "<group>"; };
+		9B7D9BC8194A9B0A00A982DB /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
+		9B7D9BC9194A9B0A00A982DB /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
 		9BB9414119455B9700033FC5 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = Classes/MyPlayground.playground; sourceTree = "<group>"; };
 		9BC1762E1945935000F2DBEB /* cityPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityPlist.plist; sourceTree = "<group>"; };
 		D966CF311944207900951F32 /* STSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +104,7 @@
 		9B294EAD1945A3E20068867D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9B7D9BC7194A9AEF00A982DB /* icons */,
 				9B294EAE1945A40E0068867D /* images */,
 			);
 			path = Resources;
@@ -129,6 +138,24 @@
 				9B7D9BB9194A8E6D00A982DB /* STTableViewCell.xib */,
 			);
 			path = STTableViewCell;
+			sourceTree = "<group>";
+		};
+		9B7D9BBD194A94D800A982DB /* STScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				9B7D9BBF194A94FE00A982DB /* STScrollView.h */,
+				9B7D9BC0194A94FE00A982DB /* STScrollView.m */,
+			);
+			path = STScrollView;
+			sourceTree = "<group>";
+		};
+		9B7D9BC7194A9AEF00A982DB /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				9B7D9BC8194A9B0A00A982DB /* up.png */,
+				9B7D9BC9194A9B0A00A982DB /* down.png */,
+			);
+			path = icons;
 			sourceTree = "<group>";
 		};
 		D966CF281944207900951F32 = {
@@ -191,11 +218,13 @@
 		D966CF4E1944209600951F32 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9B7D9BBD194A94D800A982DB /* STScrollView */,
 				9B7D9BB7194A8E4600A982DB /* STTableViewCell */,
 				D966CF531944352D00951F32 /* RootViewController.swift */,
 				D966CF541944352D00951F32 /* RootViewController.xib */,
 				9B0C0B8A1945B6CD00CA8FD5 /* DetailViewController.swift */,
 				9B0C0B8B1945B6CD00CA8FD5 /* DetailViewController.xib */,
+				9B7D9BBE194A94FD00A982DB /* STSwift-Bridging-Header.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -281,6 +310,7 @@
 			files = (
 				9B0C0B8D1945B6CD00CA8FD5 /* DetailViewController.xib in Resources */,
 				9B294EC61945A40E0068867D /* shanghai.jpg in Resources */,
+				9B7D9BCB194A9B0A00A982DB /* down.png in Resources */,
 				9B7D9BBB194A8E6D00A982DB /* STTableViewCell.xib in Resources */,
 				D966CF561944352D00951F32 /* RootViewController.xib in Resources */,
 				9B294EC31945A40E0068867D /* Montreal.jpg in Resources */,
@@ -289,6 +319,7 @@
 				9B294EC11945A40E0068867D /* guangzhou.jpg in Resources */,
 				9B294EC01945A40E0068867D /* CityofVancouver.jpg in Resources */,
 				D966CF391944207900951F32 /* Images.xcassets in Resources */,
+				9B7D9BCA194A9B0A00A982DB /* up.png in Resources */,
 				9B294EBD1945A40E0068867D /* beijing.jpg in Resources */,
 				9B294ECA1945A40E0068867D /* Washington.jpeg in Resources */,
 				9B294EC81945A40E0068867D /* Sydney.png in Resources */,
@@ -317,6 +348,7 @@
 			files = (
 				D966CF551944352D00951F32 /* RootViewController.swift in Sources */,
 				D966CF371944207900951F32 /* AppDelegate.swift in Sources */,
+				9B7D9BC1194A94FE00A982DB /* STScrollView.m in Sources */,
 				9B7D9BBA194A8E6D00A982DB /* STTableViewCell.swift in Sources */,
 				9B0C0B8C1945B6CD00CA8FD5 /* DetailViewController.swift in Sources */,
 			);
@@ -423,9 +455,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = STSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_MODULE_NAME = STSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "STSwift/Classes/STScrollView/STSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -434,9 +471,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = STSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_MODULE_NAME = STSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "STSwift/Classes/STScrollView/STSwift-Bridging-Header.h";
 			};
 			name = Release;
 		};

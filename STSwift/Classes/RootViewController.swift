@@ -3,7 +3,7 @@
 //  STSwift
 //
 //  Created by EasonWang on 14-6-8.
-//  Copyright (c) 2014年 SiTE. All rights reserved.
+//  Copyright (c) 2014 SiTE. All rights reserved.
 //
 
 struct Once {
@@ -15,15 +15,18 @@ struct Once {
 import Foundation
 import UIKit
 
-
+@objc(RootViewController)
 class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource,STTableViewCellDelegate {
     
     /** tableView */
     @IBOutlet var tableView : UITableView?
-    
+
     /** items */
     var items : NSMutableArray?
     
+    /** selectedIndexPath (用来记录选中的行的indexpath) */
+    var selectedIndexPath : NSIndexPath?
+    var state : Bool? = false
     
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -36,6 +39,7 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         self.title = "STSwift"
         
         loadData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,6 +82,19 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         return dic["city"]!.count
     }
     
+    func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat{
+        
+        if self.selectedIndexPath?.section == indexPath.section && self.selectedIndexPath?.row == indexPath.row{
+            
+            if self.state == true {
+                return 140
+            }
+            return 56.0
+        }
+        
+        return 56.0
+    }
+    
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
     {
@@ -102,10 +119,11 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         cell!.cityImage = UIImage_imageNamed(cityInfo["imgName"] as String)
         cell!.delegate = self
         
-        cell!.refreshCell()
+        cell!.btn!.selected = self.state!
+        
         return cell
     }
-
+    
     
     // STTableViewDelegate
     func didSelectRowAtIndexPath(indexPath:NSIndexPath!){
@@ -125,7 +143,7 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         self.navigationController.pushViewController(detailViewController, animated:true)
     }
     
-   
+    
     func deleteCurrentCell(indexPath:NSIndexPath!){
         
         let cityDic = self.items![indexPath.section] as NSDictionary
@@ -142,9 +160,44 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
                     self.tableView!.reloadData()
                 }
             })
+    }
+    
+    func moreCitiesPhotos(indexPath:NSIndexPath!,showState:Bool){
         
+        var indexPaths = NSMutableArray()
         
+        indexPaths.addObject(indexPath)
+
+        self.state = showState
+        
+        func closeCell(){
+            var cell : STTableViewCell? = self.tableView!.cellForRowAtIndexPath(self.selectedIndexPath) as? STTableViewCell
+            println(cell!)
+            cell!.btn!.selected = false
+        }
+        
+        if self.selectedIndexPath != nil {
+            if self.selectedIndexPath?.section == indexPath.section{
+                if self.selectedIndexPath?.row != indexPath.row{
+                    closeCell()
+                }
+            }else{
+                closeCell()
+            }
+        }
+        
+        if self.selectedIndexPath != nil && self.selectedIndexPath?.section != indexPath.section && self.selectedIndexPath?.row != indexPath.row{
+            closeCell()
+        }
+    
+        self.selectedIndexPath = indexPath
+        
+        self.tableView!.reloadRowsAtIndexPaths(indexPaths ,withRowAnimation:UITableViewRowAnimation.Automatic)
         
     }
+    
+    
+    
+    
     
 }

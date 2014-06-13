@@ -29,18 +29,30 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="djb-5l-ELR">
-                                <rect key="frame" x="61" y="24" width="259" height="27"/>
+                                <rect key="frame" x="61" y="24" width="219" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2WE-y6-IIE">
+                                <rect key="frame" x="292" y="18" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="down.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="up.png"/>
+                                <connections>
+                                    <action selector="openMorePhotos:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Y6c-Od-YMk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="btn" destination="2WE-y6-IIE" id="M4k-o7-xTq"/>
                 <outlet property="cityImageView" destination="LHo-U5-pDq" id="G0K-Ma-hFn"/>
                 <outlet property="citySubtitle" destination="djb-5l-ELR" id="AkY-TE-9oZ"/>
                 <outlet property="cityTitle" destination="Odh-qU-vsb" id="g3y-Kg-DFh"/>
@@ -49,4 +61,8 @@
             <point key="canvasLocation" x="271" y="174"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="down.png" width="32" height="32"/>
+        <image name="up.png" width="32" height="32"/>
+    </resources>
 </document>
