@@ -172,7 +172,7 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         
         func closeCell(){
             var cell : STTableViewCell? = self.tableView!.cellForRowAtIndexPath(self.selectedIndexPath) as? STTableViewCell
-            println(cell!)
+
             cell!.btn!.selected = false
         }
         

@@ -20,6 +20,7 @@ import UIKit
 
 class STTableViewCell: UITableViewCell {
     
+    
     @IBOutlet var btn : UIButton?
     
     var indexPath : NSIndexPath?
