@@ -28,9 +28,13 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
     var selectedIndexPath : NSIndexPath?
     var state : Bool? = false
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -50,7 +54,7 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
     // load data
     func loadData(){
         
-        let path : String = NSBundle.mainBundle().pathForResource("cityPlist", ofType:"plist")
+        let path : String = NSBundle.mainBundle().pathForResource("cityPlist", ofType:"plist")!
         
         self.items = NSMutableArray(contentsOfFile:path)
         
@@ -58,31 +62,31 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
     
     func UIImage_imageNamed(imageName:String) -> UIImage{
        
-        var image  = UIImage(named: imageName)
+        let image  = UIImage(named: imageName)
         
-        return image
+        return image!
     }
 
     
 
     // UITableViewDataSource Methods
-    func numberOfSectionsInTableView(tableView: UITableView!) -> Int
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
         return self.items!.count
     }
     
-    func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String!{
-        let dic : NSDictionary = self.items![section] as NSDictionary
-        return dic["country"] as NSString 
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
+        let dic : NSDictionary = self.items![section] as! NSDictionary
+        return dic["country"] as? String
     }
     
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        let dic : NSDictionary = self.items![section] as NSDictionary
+        let dic : NSDictionary = self.items![section] as! NSDictionary
         return dic["city"]!.count
     }
     
-    func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat{
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath)-> CGFloat{
         
         if self.selectedIndexPath?.section == indexPath.section && self.selectedIndexPath?.row == indexPath.row{
             
@@ -96,14 +100,14 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
     }
     
     
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let section = indexPath.section
         let row = indexPath.row
         
-        let cityDic = self.items![section] as NSDictionary
-        let cities = cityDic["city"] as NSArray
-        let cityInfo = cities[row] as NSDictionary
+        let cityDic = self.items![section] as! NSDictionary
+        let cities = cityDic["city"] as! NSArray
+        let cityInfo = cities[row] as! NSDictionary
         
         if !Once.isRegister {
             let nib = UINib(nibName:"STTableViewCell",bundle:nil)
@@ -112,16 +116,16 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         }
 
         var cell : STTableViewCell?
-        cell = self.tableView!.dequeueReusableCellWithIdentifier(Once.identifier) as STTableViewCell!
+        cell = self.tableView!.dequeueReusableCellWithIdentifier(Once.identifier) as! STTableViewCell!
         cell!.indexPath = indexPath
-        cell!.cityName = cityInfo["cityName"] as String
-        cell!.cityIntroduction = cityInfo["introduction"] as String
-        cell!.cityImage = UIImage_imageNamed(cityInfo["imgName"] as String)
+        cell!.cityName = cityInfo["cityName"] as! String
+        cell!.cityIntroduction = cityInfo["introduction"] as! String
+        cell!.cityImage = UIImage_imageNamed(cityInfo["imgName"] as! String)
         cell!.delegate = self
         
         cell!.btn!.selected = self.state!
         
-        return cell
+        return cell!
     }
     
     
@@ -132,25 +136,25 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         let section = indexPath!.section
         let row = indexPath!.row
         
-        let cityDic = self.items![section] as NSDictionary
-        let cities = cityDic["city"] as NSArray
-        let cityInfo = cities[row] as NSDictionary
+        let cityDic = self.items![section] as! NSDictionary
+        let cities = cityDic["city"] as! NSArray
+        let cityInfo = cities[row] as! NSDictionary
         
-        var detailViewController = DetailViewController(nibName:"DetailViewController",bundle:nil)
+        let detailViewController = DetailViewController(nibName:"DetailViewController",bundle:nil)
         
         detailViewController.cityInfo = cityInfo
         
-        self.navigationController.pushViewController(detailViewController, animated:true)
+        self.navigationController!.pushViewController(detailViewController, animated:true)
     }
     
     
     func deleteCurrentCell(indexPath:NSIndexPath!){
         
-        let cityDic = self.items![indexPath.section] as NSDictionary
+        let cityDic = self.items![indexPath.section] as! NSDictionary
         
         cityDic["city"]!.removeObjectAtIndex(indexPath.row)
         
-        var indexPaths = [indexPath]
+        let indexPaths : [NSIndexPath] = [indexPath]
         
         UIView.animateWithDuration(0.25, animations: {
             self.tableView!.deleteRowsAtIndexPaths(indexPaths, withRowAnimation :UITableViewRowAnimation.Fade)
@@ -164,14 +168,14 @@ class RootViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
     
     func moreCitiesPhotos(indexPath:NSIndexPath!,showState:Bool){
         
-        var indexPaths = NSMutableArray()
+        var indexPaths : [NSIndexPath] = Array()
         
-        indexPaths.addObject(indexPath)
+        indexPaths.append(indexPath)
 
         self.state = showState
         
         func closeCell(){
-            var cell : STTableViewCell? = self.tableView!.cellForRowAtIndexPath(self.selectedIndexPath) as? STTableViewCell
+            let cell : STTableViewCell? = self.tableView!.cellForRowAtIndexPath(self.selectedIndexPath!) as? STTableViewCell
 
             cell!.btn!.selected = false
         }

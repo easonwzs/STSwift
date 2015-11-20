@@ -10,11 +10,11 @@ import UIKit
 
 @objc protocol STTableViewCellDelegate{
     
-    @optional func deleteCurrentCell(indexPath:NSIndexPath!)
+    optional func deleteCurrentCell(indexPath:NSIndexPath!)
     
-    @optional func didSelectRowAtIndexPath(indexPath:NSIndexPath!)
+    optional func didSelectRowAtIndexPath(indexPath:NSIndexPath!)
     
-    @optional func moreCitiesPhotos(indexPath:NSIndexPath!,showState:Bool)
+    optional func moreCitiesPhotos(indexPath:NSIndexPath!,showState:Bool)
 }
 
 
@@ -36,7 +36,7 @@ class STTableViewCell: UITableViewCell {
     /** cityName */
     var cityName : String{
     get{
-        return self.cityTitle!.text
+        return self.cityTitle!.text!
     }
     set{
         self.cityTitle!.text = newValue
@@ -46,7 +46,7 @@ class STTableViewCell: UITableViewCell {
     /** cityIntroduction */
     var cityIntroduction : String {
     get{
-        return self.citySubtitle!.text
+        return self.citySubtitle!.text!
     }
     set{
         self.citySubtitle!.text = newValue
@@ -57,7 +57,7 @@ class STTableViewCell: UITableViewCell {
     var cityImage : UIImage{
     
     get{
-        return self.cityImageView!.image
+        return self.cityImageView!.image!
     }
     set{
         self.cityImageView!.image = newValue
@@ -73,26 +73,26 @@ class STTableViewCell: UITableViewCell {
         
         oldFrame = self.cusContentView!.frame
         
-        var swipeL = UISwipeGestureRecognizer(target: self, action:"swipeLeftGestureRecognizer:")
+        let swipeL = UISwipeGestureRecognizer(target: self, action:"swipeLeftGestureRecognizer:")
         swipeL.direction = UISwipeGestureRecognizerDirection.Left
         self.addGestureRecognizer(swipeL)
         
-        var tap = UITapGestureRecognizer(target: self, action:"tapGestureRecognizer:")
+        let tap = UITapGestureRecognizer(target: self, action:"tapGestureRecognizer:")
         self.addGestureRecognizer(tap)
         
         
-        var swipeR = UISwipeGestureRecognizer(target: self,action:"swipeRightGestureRecognizer:")
+        let swipeR = UISwipeGestureRecognizer(target: self,action:"swipeRightGestureRecognizer:")
         swipeR.direction = UISwipeGestureRecognizerDirection.Right
         self.cusContentView!.addGestureRecognizer(swipeR)
         
         // add delete button
-        let delBtn = UIButton.buttonWithType(UIButtonType.Custom) as? UIButton
-        delBtn!.frame = CGRectMake(320, 0, 56, oldFrame!.size.height)
-        delBtn!.backgroundColor = UIColor.redColor()
-        delBtn!.font = UIFont.systemFontOfSize(14)
-        delBtn?.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        delBtn?.setTitle("Trash", forState: UIControlState.Normal)
-        delBtn?.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        let delBtn = UIButton(type: UIButtonType.Custom)
+        delBtn.frame = CGRectMake(320, 0, 56, oldFrame!.size.height)
+        delBtn.backgroundColor = UIColor.redColor()
+        delBtn.titleLabel!.font = UIFont.systemFontOfSize(14)
+        delBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        delBtn.setTitle("Trash", forState: UIControlState.Normal)
+        delBtn.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
         self.cusContentView!.addSubview(delBtn)
         self.cusContentView!.frame = CGRectMake(0,0,376,56)
     }
@@ -116,7 +116,7 @@ class STTableViewCell: UITableViewCell {
     func swipeRightGestureRecognizer(recognizer:UIGestureRecognizer){
         
         func testFunc(fin : Bool){
-            println("closures finished!")
+            print("closures finished!")
         }
         
         UIView.animateWithDuration(0.25, animations: {

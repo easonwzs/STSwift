@@ -19,19 +19,23 @@ class DetailViewController: UIViewController ,UIWebViewDelegate {
     
     @IBOutlet var detailWeb : UIWebView?
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
     }
 
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if self.cityInfo {
-            self.title = self.cityInfo!["cityName"] as String
+        if (self.cityInfo != nil) {
+            self.title = self.cityInfo!["cityName"] as? String
         }
         
-        let url = NSURL.URLWithString(self.cityInfo!["detailUrl"] as String)
+        let url = NSURL.fileURLWithPath(self.cityInfo!["detailUrl"] as! String)
         
         let request = NSURLRequest(URL:url)
 
@@ -46,9 +50,9 @@ class DetailViewController: UIViewController ,UIWebViewDelegate {
     
     
     // web delegate
-    func webViewDidFinishLoad(webView: UIWebView!){
+    func webViewDidFinishLoad(webView: UIWebView){
         
-        println("加载完毕！")
+        print("加载完毕！")
         
         
     }
